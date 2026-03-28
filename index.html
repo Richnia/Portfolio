@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio de Richnia</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+    color: black;
+    transition: 0.3s;
+}
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+header {
+    background: #6a0dad;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+nav {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #8e44ad;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #6a0dad;
+}
+
+section {
+    display: none;
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dark section {
+    background: #1e1e1e;
+}
+
+.active {
+    display: block;
+}
+</style>
+
+<script>
+function showSection(id) {
+    let sections = document.querySelectorAll("section");
+    sections.forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Richnia DEKOUBOU</h1>
+    <p>Étudiant en génie logiciel | IA & Robotique</p>
+</header>
+
+<nav>
+    <button onclick="showSection('presentation')">Présentation</button>
+    <button onclick="showSection('competences')">Compétences</button>
+    <button onclick="showSection('formation')">Formation</button>
+    <button onclick="showSection('attestations')">Attestations</button>
+    <button onclick="toggleMode()">🌙 Mode sombre</button>
+</nav>
+
+<section id="presentation" class="active">
+    <h2>Présentation</h2>
+    <p>
+        Je suis Richnia DEKOUBOU, étudiant en génie logiciel, passionné par l’intelligence artificielle et les nouvelles technologies.
+    </p>
+    <p>
+        Mon objectif est de me spécialiser en intelligence artificielle et robotique afin de concevoir des systèmes intelligents.
+    </p>
+</section>
+
+<section id="competences">
+    <h2>Compétences</h2>
+    <ul>
+        <li>Python, Pandas, Jupyter</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Linux, Windows Server</li>
+        <li>Analyse de données</li>
+        <li>Excel, Word, PowerPoint</li>
+    </ul>
+</section>
+
+<section id="formation">
+    <h2>Formation</h2>
+    <p>Bac scientifique</p>
+    <p>Licence Informatique & Réseaux</p>
+    <p>Génie logiciel</p>
+</section>
+
+<section id="attestations">
+    <h2>Attestations</h2>
+    <ul>
+        <li>Cybersécurité (UTT)</li>
+        <li>Phishing awareness</li>
+    </ul>
+</section>
+
+</body>
+</html>
