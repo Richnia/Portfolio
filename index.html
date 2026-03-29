@@ -10,21 +10,26 @@ body {
     margin: 0;
     background: #f4f4f4;
     color: black;
-    transition: 0.3s;
 }
 
-.dark {
-    background: #121212;
-    color: white;
+/* HERO (image + texte) */
+.hero {
+    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header {
-    background: #6a0dad;
+.hero-text {
+    background: rgba(0,0,0,0.6);
     color: white;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    padding: 30px;
 }
 
+/* BOUTONS */
 nav {
     text-align: center;
     margin: 20px;
@@ -44,6 +49,7 @@ button:hover {
     background: #6a0dad;
 }
 
+/* SECTIONS */
 section {
     display: none;
     background: white;
@@ -52,12 +58,18 @@ section {
     border-radius: 10px;
 }
 
-.dark section {
-    background: #1e1e1e;
-}
-
 .active {
     display: block;
+}
+
+/* DARK MODE */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark section {
+    background: #1e1e1e;
 }
 </style>
 
@@ -77,11 +89,18 @@ function toggleMode() {
 
 <body>
 
-<header>
-    <h1>Richnia DEKOUBOU</h1>
-    <p>Étudiant en génie logiciel | IA & Robotique</p>
-</header>
+<!-- IMAGE + TEXTE -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Richnia DEKOUBOU</h1>
+        <p>
+        Étudiant en génie logiciel, passionné par l’intelligence artificielle et les nouvelles technologies.
+        Mon objectif est de concevoir des systèmes intelligents et innovants.
+        </p>
+    </div>
+</div>
 
+<!-- MENU -->
 <nav>
     <button onclick="showSection('presentation')">Présentation</button>
     <button onclick="showSection('competences')">Compétences</button>
@@ -90,38 +109,48 @@ function toggleMode() {
     <button onclick="toggleMode()">🌙 Mode sombre</button>
 </nav>
 
+<!-- PRÉSENTATION -->
 <section id="presentation" class="active">
     <h2>Présentation</h2>
     <p>
-        Je suis Richnia DEKOUBOU, étudiant en génie logiciel, passionné par l’intelligence artificielle et les nouvelles technologies.
-    </p>
-    <p>
-        Mon objectif est de me spécialiser en intelligence artificielle et robotique afin de concevoir des systèmes intelligents.
+    Je suis étudiant en génie logiciel avec une forte passion pour l’intelligence artificielle et la robotique.
+    Je travaille régulièrement sur des projets pour améliorer mes compétences en programmation et en développement.
     </p>
 </section>
 
+<!-- COMPÉTENCES -->
 <section id="competences">
     <h2>Compétences</h2>
     <ul>
-        <li>Python, Spyder, Jupyter</li>
+        <li>Python, Pandas, Jupyter, Spyder</li>
         <li>HTML, CSS, JavaScript</li>
         <li>Linux, Windows Server</li>
         <li>Analyse de données</li>
+        <li>Algorithmes & structures de données</li>
         <li>Excel, Word, PowerPoint</li>
+        <li>Maintenance informatique</li>
     </ul>
 </section>
 
+<!-- FORMATION -->
 <section id="formation">
     <h2>Formation</h2>
-    <p>Bac scientifique</p>
-    <p>Licence Informatique & Réseaux</p>
-    <p>Génie logiciel</p>
+
+    <h3>Baccalauréat scientifique</h3>
+    <p>Mathématiques, Physique, Anglais</p>
+
+    <h3>Licence Informatique & Réseaux</h3>
+    <p>Réseaux, algorithmes, maintenance, Linux, administration serveur</p>
+
+    <h3>Génie logiciel</h3>
+    <p>Développement web, bases de données</p>
 </section>
 
+<!-- ATTESTATIONS -->
 <section id="attestations">
     <h2>Attestations</h2>
     <ul>
-        <li>Cybersécurité (UTT)</li>
+        <li>Sensibilisation cybersécurité</li>
         <li>Phishing awareness</li>
     </ul>
 </section>
